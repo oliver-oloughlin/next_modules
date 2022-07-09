@@ -1,0 +1,38 @@
+.ripple {
+    position: relative;
+    z-index: 1 !important;
+    overflow: hidden !important;
+    transition: background 350ms !important;
+  
+    --animation-duration: 700ms;
+    --ripple-color: currentColor;
+    --ripple-strength: .8;
+}
+  
+.ripple::after {
+    content: '' !important;
+    position: absolute !important;
+    left: var(--x) !important;
+    top: var(--y) !important;
+    transform: translate(-50%, -50%) scale(0) !important;
+    width: 225% !important;
+    aspect-ratio: 1/1 !important;
+    z-index: -1 !important;
+    border-radius: 100vmax !important;
+    background: radial-gradient(circle, transparent 20%, var(--ripple-color)) !important;
+    opacity: var(--ripple-strength) !important;
+}
+  
+.ripple_effect::after {
+    animation: ripple var(--animation-duration) linear forwards !important;
+}
+  
+@keyframes ripple {
+    75% {
+        opacity: var(--ripple-strength);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
