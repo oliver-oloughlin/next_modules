@@ -1,4 +1,4 @@
-.text_content {
+.text_container {
     width: min(100%, 65ch);
     padding: 1em;
 }

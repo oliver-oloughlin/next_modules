@@ -9,15 +9,19 @@ export function okJSON(res: NextApiResponse, data: {}) {
     res.status(200).json(data)
 }
 
+export function created(res: NextApiResponse) {
+    res.status(201).end()
+}
+
 // Error responses
 export function badRequest(res: NextApiResponse) {
-    res.status(400).json({ error: 'Bad Request' })
+    res.status(400).end()
 }
 
 export function methodNotAllowed(res: NextApiResponse) {
-    res.status(405).json({ error: 'Method Not Allowed' })
+    res.status(405).end()
 }
 
 export function internalServerError(res: NextApiResponse) {
-    res.status(500).json({ error: 'Internal Server Error' })
+    res.status(500).end()
 }
