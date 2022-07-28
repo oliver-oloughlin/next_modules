@@ -1,0 +1,44 @@
+.spinner {
+    width: 100% !important;
+    aspect-ratio: 1/1 !important;
+    position: relative !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+    --clr-1: rgb(125 125 125);
+    --clr-2: rgb(200 200 200);
+    --dur-1: 1.5s;
+    --dur-2: 1.9s;
+}
+
+.spinner::before, .spinner::after {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 0 0 0 !important;
+    background-color: transparent !important;
+    border-radius: 100vmax !important;
+    animation-name: spinning !important;
+    animation-timing-function: ease-in-out !important;
+    animation-iteration-count: infinite !important;
+    border: .25em solid transparent !important;
+    mix-blend-mode: screen !important;
+}
+
+.spinner::before {
+    border-left-color: var(--clr-1) !important;
+    animation-duration: var(--dur-1) !important;
+}
+
+.spinner::after {
+    border-left-color: var(--clr-2) !important;
+    animation-duration: var(--dur-2) !important;
+}
+
+@keyframes spinning {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
