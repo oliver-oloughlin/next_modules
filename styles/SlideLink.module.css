@@ -1,0 +1,23 @@
+.slide_link {
+    position: relative !important;
+    --slide-speed: 250ms;
+    --slide-color: currentColor;
+}
+
+.slide_link::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: .15em;
+    background: var(--slide-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--slide-speed) ease-in;
+}
+
+.slide_link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}

@@ -18,28 +18,20 @@ function doRippleEffect(event: any) {
     btn.addEventListener('animationend', () => btn.classList.remove(Styles.ripple_effect), { once: true } )
 }
 
-export function RippleButton({ children, rippleColor, rippleSpeed, rippleStrength, className, ...rest }: RippleButtonProps) {
-    const btnRef = useRef<HTMLButtonElement>(null)
+export function RippleButton({ rippleColor, rippleSpeed, rippleStrength, className, ...rest }: RippleButtonProps) {
+    const ref = useRef<HTMLButtonElement>(null)
 
     useEffect(() => {
-        const btn = btnRef.current
+        const btn = ref.current
         if (btn) {
             const style = btn.style
             if (rippleColor) style.setProperty('--ripple-color', rippleColor)
             if (rippleSpeed) style.setProperty('--animation-duration', rippleSpeed)
             if (rippleStrength) style.setProperty('--ripple-strength', `${rippleStrength}`)
             btn.addEventListener('pointerdown', doRippleEffect)
-            return () => btnRef.current?.removeEventListener('pointerdown', doRippleEffect)
+            return () => ref.current?.removeEventListener('pointerdown', doRippleEffect)
         }
     }, [])
 
-    return (
-        <button
-            {...rest}
-            className={`${Styles.ripple} ${className}`}
-            ref={btnRef}
-        >
-        {children}
-        </button>
-    )
+    return <button {...rest} ref={ref} className={`${Styles.ripple} ${className}`} />
 }

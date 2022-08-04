@@ -8,6 +8,6 @@ export function useToggle(startValue: boolean) {
 
 export function useCycle<T>(values: T[]) {
     const [index, setIndex] = useState<number>(0)
-    const cycleState = () => setIndex( i => i + 1 % values.length )
+    const cycleState = () => setIndex( i => (i + 1) % values.length )
     return [values[index], cycleState] as [T, () => void]
 }

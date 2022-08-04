@@ -1,0 +1,23 @@
+.slide_button {
+    position: relative !important;
+    z-index: 1 !important;
+    --slide-speed: 250ms;
+    --slide-color: rgb(0 0 0);
+    --slide-opacity: .2;
+}
+
+.slide_button::after {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 0 0 0 !important;
+    background-color: var(--slide-color) !important;
+    opacity: var(--slide-opacity) !important;
+    transform-origin: right !important;
+    z-index: -1 !important;
+    transition: transform var(--slide-speed) ease-in !important;
+}
+
+.slide_button:hover::after {
+    transform: scaleX(0) !important;
+    transform-origin: right !important;
+}
