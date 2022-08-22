@@ -5,10 +5,13 @@ export { SlideButton } from './components/SlideButton'
 export { SlideLink } from './components/SlideLink'
 export { Carousel } from './components/Carousel'
 export { Spinner } from './components/Spinner'
+
+// Hooks
 export { useToggle, useCycle } from './hooks/toggle'
+
+// Utils
 export * from './utils/api'
 
 // Styles
-import ViewStyles from './styles/View.module.css'
 import IconStyles from './styles/Icon.module.css'
-export { ViewStyles, IconStyles }
+export { IconStyles }
