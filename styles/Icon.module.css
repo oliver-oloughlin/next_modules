@@ -9,6 +9,10 @@
     background-color: transparent !important;
 }
 
+:is(.icon::after, .icon::before) {
+    display: none !important;
+}
+
 .left {
     background-image: url('../resources/left.svg');
 }
