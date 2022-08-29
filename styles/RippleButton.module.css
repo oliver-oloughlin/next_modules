@@ -6,7 +6,7 @@
   
     --animation-duration: 700ms;
     --ripple-color: currentColor;
-    --ripple-strength: .8;
+    --ripple-strength: .35;
 }
   
 .ripple::after {
