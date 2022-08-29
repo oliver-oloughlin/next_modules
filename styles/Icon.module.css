@@ -9,8 +9,8 @@
     background-color: transparent !important;
 }
 
-:is(.icon::after, .icon::before) {
-    display: none !important;
+.icon::before, .icon::after {
+    display: none;
 }
 
 .left {
